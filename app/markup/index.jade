@@ -1,0 +1,41 @@
+!!! 5
+//if lt IE 7
+  html.no-js.ie6.oldie(lang='en')
+//if IE 7
+  html.no-js.ie7.oldie(lang='en')
+//if IE 8
+  html.no-js.ie8.oldie(lang='en')
+//[if gt IE 8]><!
+html.no-js(lang='en')
+  //<![end if]
+  head
+    title= 'arkitekt'
+    meta(charset='utf-8')
+    meta(description='')
+    - if (env === 'development')
+      link(rel='stylesheet', href='styles/site.css')
+    - else
+      link(rel='stylesheet', href='styles/site.min.css')
+    link(rel='icon', type='image/png', href='/favicon.png')
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner.header
+        .container
+          a.brand(href='#')
+            span arkitekt
+          ul.nav
+            li
+              a(href='#about') About
+    #container.container
+      .alert=empty
+      #main.row
+        .loading
+
+    - if (env === 'development')
+      script
+        var ENV = 'development';
+      script(src='scripts/site.js')
+    - else
+      script
+        var ENV = 'production';
+      script(src='scripts/site.min.js')

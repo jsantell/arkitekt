@@ -1,0 +1,21 @@
+[{
+  "id": 0,
+  "name": "Anders Fridén",
+  "position": "vocals"
+},{
+  "id": 1,
+  "name": "Björn Gelotte",
+  "position": "guitar"
+},{
+  "id": 2,
+  "name": "Peter Iwers",
+  "position": "bass"
+},{
+  "id": 3,
+  "name": "Daniel Svensson",
+  "position": "drums"
+},{
+  "id": 4,
+  "name": "Niclas Engelin",
+  "position": "guitar"
+}];

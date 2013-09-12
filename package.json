@@ -1,0 +1,26 @@
+{
+  "name": "arkitekt",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "repository": "",
+  "dependencies": {
+    "backbone": "1.0.x",
+    "underscore": "1.5.x",
+    "when": "*",
+    "mustache": "*"
+  },
+  "devDependencies": {
+    "stylus": "0.32.x",
+    "jade": "*",
+    "less": "*",
+    "mustache": "0.7.x",
+    "uglify-js": "2.3.x",
+    "clean-css": "1.0.x",
+    "browserify": "2.23.x",
+    "brfs": "0.0.5"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
