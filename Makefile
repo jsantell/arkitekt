@@ -37,7 +37,6 @@ concat:
 	cat $(PUBLIC)/scripts/app.js > $(PUBLIC)/scripts/site.js
 	
 	cat ./vendor/styles/bootstrap.css > $(PUBLIC)/styles/site.css
-	cat ./vendor/styles/font-awesome.css >> $(PUBLIC)/styles/site.css
 	cat $(PUBLIC)/styles/app.css >> $(PUBLIC)/styles/site.css
 
 min:

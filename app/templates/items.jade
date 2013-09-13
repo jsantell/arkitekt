@@ -1,10 +1,12 @@
 table.table.table-hover.items
   | {{#items}}
   tr(data-id='{{id}}')
-      td.name
-        h4 {{name}}
-        span {{position}}
-        .btn-group
-          button.btn.btn-default(type='button')
-            i.icon-pencil.icon-large
+    td.name
+      // inline styles since this isn't generic
+      h4(style='display:inline;margin-right:20px') {{name}}
+      .btn-group
+        button.btn.btn-default.edit(type='button')
+          i.icon-wrench.icon-large
+        button.btn.btn-default.delete(type='button')
+          i.icon-trash.icon-large
   | {{/items}}

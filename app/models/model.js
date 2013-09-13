@@ -18,5 +18,21 @@ module.exports = Backbone.Model.extend({
     });
 
     return deferred.promise;
+  },
+
+  destroy: function () {
+    var _destroy = Backbone.Model.prototype.destroy;
+    var deferred = defer();
+
+    loader.show();
+    _destroy.apply(this, arguments).then(function (data, status, xhr) {
+
+      setTimeout(function () {
+        loader.hide();
+        deferred.resolve(data);
+      }, config.mockDelay || 0);
+    });
+
+    return deferred.promise;
   }
 });

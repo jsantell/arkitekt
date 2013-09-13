@@ -1,7 +1,12 @@
-.modal-backdrop
-.modal.{{type}}
-  .modal-header
-    button.close(type='button') &times;
-    h3 {{title}}
-  .modal-body {{content}}
-  .modal-footer
+.modal-backdrop.fade
+.modal.fade(class='{{type}}')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type='button') &times;
+        h4.modal-title {{title}}
+      .modal-body {{content}}
+      .modal-footer
+        | {{#actions}}
+        a.btn(href='#', data-action='{{action}}', class='btn-{{type}}') {{message}}
+        | {{/actions}}

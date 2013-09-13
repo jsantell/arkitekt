@@ -2,13 +2,12 @@ var Backbone = require('backbone');
 var Router = require('./router');
 var config = require('./config');
 
+var app = {};
+
 // Since jQuery isn't up to date in npm..
 Backbone.$ = require('../vendor/scripts/jquery');
 
 // Fire up router
-
-
-var app = {};
 app.router = new Router();
 
 // Hook GA into Backbone navigation
