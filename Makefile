@@ -1,5 +1,6 @@
 PUBLIC=./public
 APP=./app
+BUILD=./build
 JADE=./node_modules/jade/bin/jade
 STYLUS=./node_modules/stylus/bin/stylus
 BROWSERIFY=./node_modules/browserify/bin/cmd.js
@@ -10,6 +11,10 @@ LESS=./node_modules/less/bin/lessc
 all: install jade stylus browserify less concat min
 
 jade:
+	node $(JADE) $(APP)/templates/*.jade --out $(BUILD)
+	@for i in $(BUILD)/*.html; do \
+		mv "$$i" "$${i/.html}".mustache; \
+	done
 	node $(JADE) $(APP)/markup/index.jade --obj '{"env":"development"}' --pretty --out $(PUBLIC)
 	mv $(PUBLIC)/index.html $(PUBLIC)/dev.html
 	node $(JADE) $(APP)/markup/index.jade --obj '{"env":"production"}' --out $(PUBLIC)

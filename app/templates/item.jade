@@ -1,0 +1,22 @@
+form.editable.form-inline
+  table.table.table-hover
+    tr
+      td name
+      td
+        .editable(data-name="name")
+          span {{name}}
+          input.form-control(type='text', value='{{name}}')
+    tr
+      td position
+      td
+        .editable(data-name="position")
+          span {{position}}
+          input.form-control(type='text', value='{{position}}')
+    tr
+      td band
+      td
+        .editable(data-name="band")
+          span {{band}}
+          input.form-control(type='text', value='{{band}}')
+a.btn.btn-default(href='#items') Go Back
+a.save-item.btn.btn-primary.disabled(href='#') Save

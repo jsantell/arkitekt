@@ -1,0 +1,10 @@
+table.table.table-hover.items
+  | {{#items}}
+  tr(data-id='{{id}}')
+      td.name
+        h4 {{name}}
+        span {{position}}
+        .btn-group
+          button.btn.btn-default(type='button')
+            i.icon-pencil.icon-large
+  | {{/items}}
