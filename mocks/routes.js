@@ -9,6 +9,7 @@ module.exports = function (app) {
     res.set('Access-Control-Allow-Methods', method || 'GET');
     res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
     if ('OPTIONS' == req.method) return res.send(200);
+    console.log(req.method + ': ' + req.url);
     next();
   });
 
@@ -18,6 +19,6 @@ module.exports = function (app) {
   app.get('/items/:id', items.get);
   app.post('/items', items.create);
   app.put('/items/:id', items.update);
-  app.get('/items/:id', items.delete);
+  app.delete('/items/:id', items.delete);
 
 };
