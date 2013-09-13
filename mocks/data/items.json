@@ -1,21 +1,56 @@
 [{
   "id": 0,
   "name": "Anders Fridén",
-  "position": "vocals"
+  "position": "vocals",
+  "band": "In Flames"
 },{
   "id": 1,
   "name": "Björn Gelotte",
-  "position": "guitar"
+  "position": "guitar",
+  "band": "In Flames"
 },{
   "id": 2,
   "name": "Peter Iwers",
-  "position": "bass"
+  "position": "bass",
+  "band": "In Flames"
 },{
   "id": 3,
   "name": "Daniel Svensson",
-  "position": "drums"
+  "position": "drums",
+  "band": "In Flames"
 },{
   "id": 4,
   "name": "Niclas Engelin",
-  "position": "guitar"
-}];
+  "position": "guitar",
+  "band": "In Flames"
+},{
+  "id": 5,
+  "name": "Björn \"Speed\" Strid",
+  "position": "vocals",
+  "band": "Soilwork"
+},{
+  "id": 6,
+  "name": "Ola Flink",
+  "position": "bass",
+  "band": "Soilwork"
+},{
+  "id": 7,
+  "name": "Sven Karlsson",
+  "position": "keyboards",
+  "band": "Soilwork"
+},{
+  "id": 8,
+  "name": "Dirk Verbeuren",
+  "position": "drums",
+  "band": "Soilwork"
+},{
+  "id": 9,
+  "name": "Peter Wichers",
+  "position": "guitar",
+  "band": "Soilwork"
+},{
+  "id": 10,
+  "name": "Sylvain Coudret",
+  "position": "guitar",
+  "band": "Soilwork"
+}]

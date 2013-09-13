@@ -27,11 +27,9 @@ browserify:
 
 less:
 	node $(LESS) ./vendor/styles/bootstrap/bootstrap.less > ./vendor/styles/bootstrap.css
-	node $(LESS) ./vendor/styles/font-awesome/font-awesome.less > ./vendor/styles/font-awesome.css
 
 concat:
-	cat ./vendor/scripts/jquery-2.0.0.js > $(PUBLIC)/scripts/site.js
-	cat $(PUBLIC)/scripts/app.js >> $(PUBLIC)/scripts/site.js
+	cat $(PUBLIC)/scripts/app.js > $(PUBLIC)/scripts/site.js
 	
 	cat ./vendor/styles/bootstrap.css > $(PUBLIC)/styles/site.css
 	cat ./vendor/styles/font-awesome.css >> $(PUBLIC)/styles/site.css

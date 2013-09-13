@@ -5,47 +5,50 @@ var ItemsView = require('./views/items');
 var ItemView = require('./views/item');
 var ContentView = require('./views/content');
 
-module.exports = Backbone.Router.extend({
+var Router = Backbone.Router.extend({
 
   routes: {
-    '': 'home',
-    'items/': 'items',
-    'items/:item': 'item',
-    'about': 'about'
+    '': 'homeRoute',
+    'items': 'itemsRoute',
+    'items/:item': 'itemRoute',
+    'about': 'aboutRoute'
   },
 
-  initialize: function () {},
-
-  items: function () {
-    var router = this;
-    getItems(router).then(function (items) {
-      router.setView(new ItemsView({
-        items: items
-      }));
-    });
+  initialize: function () {
   },
 
-  item: function (id) {
-    var router = this;
-    getItems(router).then(function (items) {
-      router.setView(new ItemView({
-        item: items.find(function (i) { return i.id === id; })
-      }));
-    });
-  },
-
-  home: function () {
+  homeRoute: function () {
     this.setView(new ContentView ({
       template: 'home'
     }));
   },
 
-  about: function () {
+  aboutRoute: function () {
     this.setView(new ContentView ({
       template: 'about'
     }));
   },
-  
+
+  itemsRoute: function () {
+    var router = this;
+    getItems(router).then(function (items) {
+      router.setView(new ItemsView({
+        items: items,
+        router: router
+      }));
+    });
+  },
+
+  itemRoute: function (id) {
+    var router = this;
+    getItems(router).then(function (items) {
+      router.setView(new ItemView({
+        item: items.find(function (i) { return i.id === +id; }),
+        router: router
+      }));
+    });
+  },
+
   clearView: function () {
     if (this.view && this.view.destroy) {
       this.view.destroy();
@@ -60,14 +63,18 @@ module.exports = Backbone.Router.extend({
 
 });
 
+module.exports = Router;
+
 function getItems (router) {
   var deferred = defer();
-  if (!router.items)
+  if (!router.items) {
     router.items = new Items();
-  router.items.fetch({
-    success: deferred.resolve,
-    error: deferred.reject
-  });
+    router.items.fetch({
+      success: deferred.resolve,
+      error: deferred.reject
+    });
+  } else 
+    deferred.resolve(router.items);
 
   return deferred.promise;
 }

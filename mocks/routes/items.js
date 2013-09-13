@@ -10,14 +10,14 @@ module.exports = {
   get: function (req, res) {
     res.send(get(req.params.id));
   },
-  post: function (req, res) {
-    items.push(req.body.item);
+  create: function (req, res) {
+    items.push(req.body);
     res.send({ success: true });
   },
-  put: function (req, res) {
-    var item = get(req.body.item.id);
-    Object.keys(req.body.item).forEach(function (prop) {
-      item[prop] = req.body.item[prop];
+  update: function (req, res) {
+    var item = get(req.body.id);
+    Object.keys(req.body).forEach(function (prop) {
+      item[prop] = req.body[prop];
     });
     res.send({ success: true });
   },
@@ -30,6 +30,6 @@ module.exports = {
 
 function get (id) {
   return _.find(items, function (item) {
-    return item.id === id;
+    return item.id === (+id);
   });
 }

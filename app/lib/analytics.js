@@ -1,5 +1,5 @@
 var Backbone = require('backbone');
-var config = require('../config');
+var _ = require('underscore');
 
 function initialize () {
   Backbone.history.loadUrl = _.wrap(
@@ -17,8 +17,6 @@ function initialize () {
       return matched;
     }
   );
-
-  Backbone.history.start({ root: config.root });
 }
 
 module.exports = initialize;

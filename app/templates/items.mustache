@@ -1,4 +1,4 @@
-<table class="table items">
+<table class="table table-hover items">
   {{#items}}
     <tr data-id="{{id}}">
       <td class="name">
@@ -6,6 +6,11 @@
           {{name}}
         </h4>
         <span>{{position}}</span>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">
+            <i class="icon-pencil icon-large"></i> 
+          </button>
+        </div>
       </td>
     </tr>
   {{/items}}

@@ -3,8 +3,9 @@ var _ = require('underscore');
 var config = {
   COMMON: {},
   DEVELOPMENT: {
-    apiURL: 'http://localhost:9999',
-    root: '/client'
+    apiURL: 'http://localhost:9999/',
+    root: '/arkitekt/public/',
+    mockDelay: 2000
   },
   PRODUCTION: {
     apiURL: 'http://my-app.io',
